@@ -60,7 +60,7 @@
 \makeatletter
 \let\ps@customFooterStyle\ps@plain % Copy the plain style to customFooterStyle
 \patchcmd{\ps@customFooterStyle}{\thepage}{
-    \color{gray}\textit{\small John Doe - Page \thepage{} of \pageref*{LastPage}}
+    \color{gray}\textit{\small 손현준 - Page \thepage{} of \pageref*{LastPage}}
 }{}{} % replace number by desired string
 \makeatother
 \pagestyle{customFooterStyle}
@@ -154,17 +154,6 @@
     \par\kern\topsep
 } % new environment for the header
 
-\newcommand{\placelastupdatedtext}{% \placetextbox{<horizontal pos>}{<vertical pos>}{<stuff>}
-    \AddToShipoutPictureFG*{% Add <stuff> to current page foreground
-        \put(
-        \LenToUnit{\paperwidth-2 cm-0.2 cm+0.05cm},
-        \LenToUnit{\paperheight-1.0 cm}
-        ){\vtop{{\null}\makebox[0pt][c]{
-            \small\color{gray}\textit{Last updated in May 2024}\hspace{\widthof{Last updated in May 2024}}
-        }}}%
-    }%
-}%
-
 % save the original href command in a new command:
 \let\hrefWithoutArrow\href
 
@@ -175,23 +164,19 @@
 \begin{document}
     \placelastupdatedtext
     \begin{header}
-        \fontsize{30 pt}{30 pt}
-        \textbf{손현준 | 문제를 해결하기 위한 개발자}
+        \fontsize{15 pt}{15 pt}
+        \textbf{손현준}
 
         \vspace{0.3 cm}
 
         \normalsize
-        \mbox{{\footnotesize\faMapMarker*}\hspace*{0.13cm}Seoul}
+        \mbox{\hrefWithoutArrow{mailto:guswns1659@gmail.com}{{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}guswns1659@gmail.com}}
         \kern 0.5 cm
-        \mbox{\hrefWithoutArrow{mailto:youremail@yourdomain.com}{{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}youremail@yourdomain.com}}
+        \mbox{\hrefWithoutArrow{tel:010-7720-7957}{{\footnotesize\faPhone*}\hspace*{0.13cm}010-7720-7957}}
         \kern 0.5 cm
-        \mbox{\hrefWithoutArrow{tel:+90-541-999-99-99}{{\footnotesize\faPhone*}\hspace*{0.13cm}+90 541 999 99 99}}
+        \mbox{\hrefWithoutArrow{https://guswns1659.github.io}{{\footnotesize\faLink}\hspace*{0.13cm}https://guswns1659.github.io}}
         \kern 0.5 cm
-        \mbox{\hrefWithoutArrow{https://yourwebsite.com/}{{\footnotesize\faLink}\hspace*{0.13cm}yourwebsite.com}}
-        \kern 0.5 cm
-        \mbox{\hrefWithoutArrow{https://linkedin.com/in/yourusername}{{\footnotesize\faLinkedinIn}\hspace*{0.13cm}yourusername}}
-        \kern 0.5 cm
-        \mbox{\hrefWithoutArrow{https://github.com/yourusername}{{\footnotesize\faGithub}\hspace*{0.13cm}yourusername}}
+        \mbox{\hrefWithoutArrow{https://github.com/guswns1659}{{\footnotesize\faGithub}\hspace*{0.13cm}https://github.com/guswns1659}}
         \kern 0.5 cm
     \end{header}
 
@@ -227,15 +212,18 @@
 
 
     \begin{twocolentry}{
-        2021.07 ~ current
+        2021.07 - 현재
 
         2년 11개월
     }
         \textbf{카카오페이}, Backend Software Engineer
         \begin{highlights}
-            \item {\bfseries 주식 미수금액용 충전 프로젝트} | 평균 초당 13건 발생하는 미수금을 위한 충전 기능 제공하여 주식 사용자 편리성 강화
-            \item Implemented iChat integration with OS X Spotlight Search by creating a tool that extracts metadata from saved chat transcripts and provides metadata to a system-wide search database.
-            \item Redesigned chat file format and implemented backward compatibility for search.
+
+            \item \textbf{주식 미수금액용 충전 프로젝트} | 평균 초당 13건 발생하는 미수금을 위한 충전 기능 제공하여 주식 사용자 편리성 강화
+            \item \textbf{마이데이터 계좌 송금 프로젝트} | 연결된 마이데이터 계좌에서 타 계좌로 송금할 수 있는 기능 제공해 트래픽 증대에 기여한 프로젝트
+            \item \textbf{은행 계좌 다건을 페이에 한번에 연결하는 프로젝트} | 기존 단건 계좌 연결을 개선해 평균 5건 이상 은행 계좌 한번에 연결해 사용자 경험 증대 프로젝트
+            \item \textbf{쓸수록 모이는 소비적금 프로젝트} | 카카오페이에서 결제한 금액의 일부를 적금으로 모아주는 편리한 기능 제공해 수익성 증대
+            \item \textbf{계좌 연결 시 1원인증 스킵 프로젝트} | 10대와 50대에서 높은 이탈률을 보이는 1원인증 단계를 조건에 따라 생략해 사용자 경험 증대
         \end{highlights}
     \end{twocolentry}
 
@@ -243,170 +231,106 @@
     \vspace{0.2 cm}
 
     \begin{twocolentry}{
-        WA, USA
+        2020.10 - 2021.07
 
-        Sept. 2003 to Apr. 2005
-
-        1 year 7 months
+        9개월
     }
-        \textbf{Microsoft Corporation}, Lead Student Ambassador
+        \textbf{뱅크샐러드}, Backend Software Engineer
         \begin{highlights}
-            \item Promoted to Lead Student Ambassador in the Fall of 2004, supervised 10 - 15 Student Ambassadors.
-            \item Created and taught a computer science course, CSE 099: Software Design and Development.
+
+            \item \textbf{뱅크샐러드 PLCC 카드, 빨대카드 프로젝트} | 카드발급수수료 매출 확보, 카드사와 데이터 교환을 통한 뱅크샐러드 데이터 자산 강화를 목적한 프로젝트
+            \item \textbf{신한카드 Open API 연동 프로젝트} | 스크래핑방식이 아닌 Open API 통신으로 데이터 연동 속도 향상을 통한 사용자 경험 증대 프로젝트
         \end{highlights}
     \end{twocolentry}
 
 
-    \vspace{0.2 cm}
-
-    \begin{twocolentry}{
-        PA, USA
-
-        Oct. 2001 to May 2005
-
-        3 years 7 months
-    }
-        \textbf{University of Pennsylvania}, Head Teaching Assistant
-        \begin{highlights}
-            \item Implemented a user interface for the VS open file switcher (ctrl-tab) and extended it to tool windows.
-            \item Created a service to provide gradient across VS and VS add-ins. Optimized service via caching.
-            \item Programmer Productivity Research Center (Summers 2001, 2002)
-            \item Built app to compute the similarity of all methods in a code base, reduced time from $\mathcal{O}(n^2)$ to $\mathcal{O}(n \log n)$.
-            \item Created a test case generation tool that creates random XML docs from XML Schema.
-        \end{highlights}
-    \end{twocolentry}
-
-
-    \vspace{0.2 cm}
-
-    \begin{twocolentry}{
-        WA, USA
-
-        June 2003 to Aug. 2003
-
-        2 months
-    }
-        \textbf{Microsoft Corporation}, Software Design Engineer, Intern
-        \begin{highlights}
-            \item Promoted to Lead Student Ambassador in the Fall of 2004, supervised 10 - 15 Student Ambassadors.
-        \end{highlights}
-    \end{twocolentry}
 
     \section{Education}
 
-    \begin{threecolentry}{\textbf{BS}}{
-        Sept. 2000 to May 2005
-    }
-        \textbf{University of Pennsylvania}, Computer Science
-        \begin{highlights}
-            \item GPA: 3.9/4.0 (\href{https://example.com}{Transcript})
-            \item \textbf{Coursework:} Software Foundations, Computer Architecture, Algorithms, Artificial Intelligence, Comparison of Learning Algorithms, Computational Theory.
-        \end{highlights}
-    \end{threecolentry}
-
-
-
-
-
-
-
-
-    \section{Publications}
-
-
-
-
-    \begin{samepage}
-        \begin{twocolentry}{
-            Jan. 2004
-        }
-            \textbf{Magneto-Thermal Thin Shell Approximation for 3D Finite Element Analysis of No-Insulation Coils}
-
-            \vspace{0.10 cm}
-
-            \mbox{Albert Smith}, \mbox{\textbf{\textit{John Doe}}}, \mbox{Jane Derry}, \mbox{Harry Tom}, \mbox{Frodo Baggins}
-            \vspace{0.10 cm}
-
-            \href{https://doi.org/10.1109/TASC.2023.3340648}{10.1109/TASC.2023.3340648}    \end{twocolentry}
-    \end{samepage}
-
-
-
-    \section{Projects}
-
 
 
 
     \begin{twocolentry}{
-        2004
+        2012 - 2019
     }
-        \textbf{Multi-User Drawing Tool}
         \begin{highlights}
-            \item Developed an electronic classroom where multiple users can view and simultaneously draw on a "chalkboard" with each person's edits synchronized.
-            \item Used C++ and MFC.
+
+            \item \textbf{경희대학교}, 호텔경영학과
+
         \end{highlights}
     \end{twocolentry}
-
 
     \vspace{0.2 cm}
 
     \begin{twocolentry}{
-        2003 to 2004
+        2020
     }
-        \textbf{Synchronized Calendar}
         \begin{highlights}
-            \item Developed a desktop calendar with globally shared and synchronized calendars, allowing users to schedule meetings with other users.
-            \item Used C\#.NET, SQL, and XML.
+
+            \item \textbf{코드스쿼드 부트캠프}, 백엔드 과정 수료
+
         \end{highlights}
     \end{twocolentry}
 
+
+    \section{Specical Experience \&& Certificate}
+
+
+    \begin{twocolentry}{
+        2024
+    }
+        \begin{highlights}
+
+            \item SQLD
+
+        \end{highlights}
+    \end{twocolentry}
+
+    \vspace{0.2 cm}
+
+
+    \begin{twocolentry}{
+        2022
+    }
+        \begin{highlights}
+
+            \item \textbf{코드스쿼드 리뷰어}, 수강생 프로젝트 코드리뷰 지원
+
+        \end{highlights}
+    \end{twocolentry}
 
     \vspace{0.2 cm}
 
     \begin{twocolentry}{
-        2002
+        2020
     }
-        \textbf{Operating System}
         \begin{highlights}
-            \item Developed a UNIX-style OS with a scheduler, file system, text editor, and calculator.
-            \item Used C.
+
+            \item \href{https://launchpad.net/~ubuntu-l10n-ko}{우분투 한국어 번역 오픈소스 컨트리뷰톤 참여}
+
         \end{highlights}
     \end{twocolentry}
-
-
-
-
-    \section{Additional Experience And Awards}
-
-
-
-
-    \begin{onecolentry}
-        \textbf{Instructor (2003 - 2005):} Taught two full-credit Computer Science courses.
-    \end{onecolentry}
-
-    \vspace{0.2 cm}
-
-    \begin{onecolentry}
-        \textbf{Third Prize, Senior Design Projects:} Awarded 3rd prize for a synchronized calendar project out of 100 projects.
-    \end{onecolentry}
 
 
 
     \section{Technologies}
 
 
-
-
-    \begin{onecolentry}
-        \textbf{Languages:} C++, C, Java, Objective-C, C\#.NET, SQL, JavaScript
-    \end{onecolentry}
+    \begin{highlights}
+        \item \textbf{Languages:} Java, Kotlin
+    \end{highlights}
 
     \vspace{0.2 cm}
 
-    \begin{onecolentry}
-        \textbf{Software:} Visual Studio, Microsoft SQL Server, Eclipse, XCode, Interface Builder
-    \end{onecolentry}
+    \begin{highlights}
+        \item \textbf{Framework \&& Library:} Spring, JPA, Gradle
+    \end{highlights}
+
+    \vspace{0.2 cm}
+
+    \begin{highlights}
+        \item \textbf{Infra} Kubernetes, Mysql, Redis, Kafka
+    \end{highlights}
 
 
 
