@@ -1,0 +1,358 @@
+\documentclass[10pt, letterpaper]{article}
+
+% Packages:
+\usepackage[
+    ignoreheadfoot, % set margins without considering header and footer
+    top=2 cm, % seperation between body and page edge from the top
+    bottom=2 cm, % seperation between body and page edge from the bottom
+    left=2 cm, % seperation between body and page edge from the left
+    right=2 cm, % seperation between body and page edge from the right
+    footskip=1.0 cm, % seperation between body and footer
+% showframe % for debugging
+]{geometry} % for adjusting page geometry
+\usepackage[explicit]{titlesec} % for customizing section titles
+\usepackage{tabularx} % for making tables with fixed width columns
+\usepackage{array} % tabularx requires this
+\usepackage[dvipsnames]{xcolor} % for coloring text
+\definecolor{primaryColor}{RGB}{0, 79, 144} % define primary color
+\usepackage{enumitem} % for customizing lists
+\usepackage{fontawesome5} % for using icons
+\usepackage{amsmath} % for math
+\usepackage[
+    pdftitle={John Doe's CV},
+    pdfauthor={John Doe},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref} % for links, metadata and bookmarks
+\usepackage[pscoord]{eso-pic} % for floating text on the page
+\usepackage{calc} % for calculating lengths
+\usepackage{bookmark} % for bookmarks
+\usepackage{lastpage} % for getting the total number of pages
+\usepackage{changepage} % for one column entries (adjustwidth environment)
+\usepackage{paracol} % for two and three column entries
+\usepackage{ifthen} % for conditional statements
+\usepackage{needspace} % for avoiding page brake right after the section title
+\usepackage{iftex} % check if engine is pdflatex, xetex or luatex
+
+% 한국어 폰트를 위해
+\usepackage{luatexko}
+\usepackage{fontspec}
+\setmainfont{Nanum Myeongjo} % 나눔고딕 폰트 사용
+\setsansfont{Nanum Myeongjo}
+
+
+% Ensure that generate pdf is machine readable/ATS parsable:
+\ifPDFTeX
+\input{glyphtounicode}
+\pdfgentounicode=1
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\fi
+
+\usepackage[default, type1]{sourcesanspro}
+
+% Some settings:
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt} % remove space before adjustwidth environment
+\pagestyle{empty} % no header or footer
+\setcounter{secnumdepth}{0} % no section numbering
+\setlength{\parindent}{0pt} % no indentation
+\setlength{\topskip}{0pt} % no top skip
+\setlength{\columnsep}{0.15cm} % set column seperation
+\makeatletter
+\let\ps@customFooterStyle\ps@plain % Copy the plain style to customFooterStyle
+\patchcmd{\ps@customFooterStyle}{\thepage}{
+    \color{gray}\textit{\small 손현준 - Page \thepage{} of \pageref*{LastPage}}
+}{}{} % replace number by desired string
+\makeatother
+\pagestyle{customFooterStyle}
+
+\titleformat{\section}{
+% avoid page braking right after the section title
+    \needspace{4\baselineskip}
+    % make the font size of the section title large and color it with the primary color
+    \Large\color{primaryColor}
+}{
+}{
+}{
+% print bold title, give 0.15 cm space and draw a line of 0.8 pt thickness
+% from the end of the title to the end of the body
+    \textbf{#1}\hspace{0.15cm}\titlerule[0.8pt]\hspace{-0.1cm}
+}[] % section title formatting
+
+\titlespacing{\section}{
+% left space:
+    -1pt
+}{
+% top space:
+    0.3 cm
+}{
+% bottom space:
+    0.2 cm
+} % section title spacing
+
+% \renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$} % custom bullet points
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=0.4 cm + 10pt
+    ]
+    }{
+    \end{itemize}
+} % new environment for highlights
+
+\newenvironment{highlightsforbulletentries}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=10pt
+    ]
+    }{
+    \end{itemize}
+} % new environment for highlights for bullet entries
+
+
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{
+        0.2 cm + 0.00001 cm
+    }{
+        0.2 cm + 0.00001 cm
+    }
+    }{
+    \end{adjustwidth}
+} % new environment for one column entries
+
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 4.5 cm}
+    \begin{paracol}{2}
+    }{
+        \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+} % new environment for two column entries
+
+\newenvironment{threecolentry}[3][]{
+    \onecolentry
+    \def\thirdColumn{#3}
+    \setcolumnwidth{1 cm, \fill, 4.5 cm}
+    \begin{paracol}{3}
+    {\raggedright #2}
+        \switchcolumn
+        }{
+        \switchcolumn \raggedleft \thirdColumn
+    \end{paracol}
+    \endonecolentry
+} % new environment for three column entries
+
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\color{primaryColor}\linespread{1.5}
+    }{
+    \par\kern\topsep
+} % new environment for the header
+
+% save the original href command in a new command:
+\let\hrefWithoutArrow\href
+
+% new command for external links:
+\renewcommand{\href}[2]{\hrefWithoutArrow{#1}{\mbox{\ifthenelse{\equal{#2}{}}{ }{#2 }\raisebox{.15ex}{\footnotesize \faExternalLink*}}}}
+
+
+\begin{document}
+    \placelastupdatedtext
+    \begin{header}
+        \fontsize{15 pt}{15 pt}
+        \textbf{Portfolio - 손현준}
+
+        \vspace{0.3 cm}
+
+        \normalsize
+        \mbox{\hrefWithoutArrow{mailto:guswns1659@gmail.com}{{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}guswns1659@gmail.com}}
+        \kern 0.5 cm
+        \mbox{\hrefWithoutArrow{tel:010-7720-7957}{{\footnotesize\faPhone*}\hspace*{0.13cm}010-7720-7957}}
+        \kern 0.5 cm
+        \mbox{\hrefWithoutArrow{https://guswns1659.github.io}{{\footnotesize\faLink}\hspace*{0.13cm}https://guswns1659.github.io}}
+        \kern 0.5 cm
+        \mbox{\hrefWithoutArrow{https://github.com/guswns1659}{{\footnotesize\faGithub}\hspace*{0.13cm}https://github.com/guswns1659}}
+        \kern 0.5 cm
+    \end{header}
+
+    \vspace{0.3 cm - 0.3 cm}
+
+
+    \section{Projects}
+
+    \begin{twocolentry}{
+        2023.12 - 2024.02
+
+        2개월
+    }
+        \textbf{계좌 연결 시 1원인증 스킵 프로젝트}
+        \begin{highlights}
+
+            \item \textbf{설명} : 10대와 50대에서 높은 이탈률을 보이는 1원인증 단계를 조건에 따라 생략해 사용자 경험 증대
+            \item \textbf{성과} : 1원인증 스킵 기술 적용해 계좌 연결 전환율 8\% 증가 (26.1\%->33.7\%)
+            \item \textbf{역할} :
+            \begin{highlights}
+                \item webFlux이용해 short-circuit evaluation 적용. 동기호출 대비 레이턴시 2초 -> 0.5초 개선.
+            \end{highlights}
+            \item \textbf{기술} : WebFlux
+        \end{highlights}
+    \end{twocolentry}
+
+    \vspace{0.2 cm}
+
+    \begin{twocolentry}{
+        2024.02 - 2024.08
+
+        6개월
+    }
+        \textbf{실시간 택스 리펀 프로젝트}
+        \begin{highlights}
+
+            \item \textbf{설명} : 카카오페이 통해서 즉시 부가세를 환급받아 사용자 편의성 증대
+            \item \textbf{역할} :
+            \begin{highlights}
+                \item UTC+1 차이를 고려한 안정적인 대사 및 정산 설계 및 개발 진행
+                \item 중복 호출 시에도 정상적인 동작을 위한 멱등적 API 설계
+                \item 해외 알리페이 개발 담당자와 API 및 네트워크 통신을 위한 커뮤니케이션 담당
+            \end{highlights}
+            \item \textbf{기술} : Spring batch
+        \end{highlights}
+    \end{twocolentry}
+
+    \vspace{0.2 cm}
+
+    \begin{twocolentry}{
+        2023.07 - 2024.01
+
+        5개월
+    }
+        \textbf{쓸수록 모이는 소비적금 프로젝트}
+        \begin{highlights}
+
+            \item \textbf{설명} : 결제한 금액의 일부를 적금으로 모아주는 편리한 기능 제공해 수익성 증대
+            \item \textbf{성과} : 적금 계좌 20,000건 개설
+            \item \textbf{역할} :
+            \begin{highlights}
+                \item 송금 금액 정합성을 위한 대사 및 정산 로직 개발
+                \item 은행 지연 대비 서킷브레이커 적용
+                \item 여러 프로젝트에서 반복되어 사용되는 송금 기능을 모듈화하여 중복 제거
+                \item 스프린트 및 이벤트 스토밍 진행하여 PM, 개발자 동일한 컨텍스트 공유. 정확한 리소스 파악
+            \end{highlights}
+            \item \textbf{기술} : 스프링 서킷브레이커, 레디스, 카프카, 스프링 배치
+        \end{highlights}
+    \end{twocolentry}
+
+    \vspace{0.2 cm}
+
+    \begin{twocolentry}{
+        2022.10 - 2023.01
+
+        3개월
+    }
+        \textbf{은행 계좌 다건을 페이에 한번에 연결하는 프로젝트}
+        \begin{highlights}
+
+            \item \textbf{설명} : 기존 단건 계좌 연결을 개선해 평균 5건 이상 은행 계좌 한번에 연결해 사용자 경험 증대 프로젝트
+            \item \textbf{성과} : 월 평균 계좌 연결 건수 85\% 증가 (54만건 -> 100만건)
+            \item \textbf{역할} :
+            \begin{highlights}
+                \item webflux 병렬성 이용하여 일반 동기호출 대비 레이턴시 3초 -> 0.5초로 개선. (평균 10건 기준)
+                \item 타임아웃 처리를 위한 이벤트 발행 및 폴링 방식 도입
+            \end{highlights}
+            \item \textbf{기술} : WebFlux, kafka
+        \end{highlights}
+    \end{twocolentry}
+
+   \vspace{0.2 cm}
+
+    \begin{twocolentry}{
+        2022.07 - 2022.11
+
+        4개월
+    }
+        \textbf{마이데이터 계좌 송금 프로젝트}
+        \begin{highlights}
+
+            \item \textbf{설명} : 연결된 마이데이터 계좌에서 타 계좌로 송금할 수 있는 기능 제공해 트래픽 증대에 기여한 프로젝트
+            \item \textbf{성과} : 분기 대비 송금 일 건수 28\% 증가 (180만 건 -> 230만건)
+            \item \textbf{역할} :
+            \begin{highlights}
+                \item 잔액이 변동되기에 정합성이 중요한 기능이라 레디스를 이용한 분산락을 사용
+                \item 타임아웃 등 데이터 정합성 불일치 건들 재처리하는 배치 개발
+                \item 코드리뷰 비용을 줄이고 개발 팀원 모두가 동일한 정보를 공유하기 위해 페어프로그래밍 진행
+            \end{highlights}
+            \item \textbf{기술} : 레디스
+        \end{highlights}
+    \end{twocolentry}
+
+    \vspace{0.2 cm}
+
+    \begin{twocolentry}{
+        2022.03 - 2022.06
+
+        4개월
+    }
+        \textbf{주식 미수금액용 충전 프로젝트}
+        \begin{highlights}
+
+            \item \textbf{설명} : 평균 초당 13건 발생하는 미수금을 위한 충전 기능 제공하여 주식 사용자 편리성 강화
+            \item \textbf{성과} : 잔액 정합성 유지하며 45,000건/시간, 13TPS 트래픽 처리, 약 13억/일 충전금액 증대 (peak 기준. 10건당 30만원 책정)
+            \item \textbf{역할} :
+            \begin{highlights}
+                \item 잔액이 변동되기에 정합성이 중요한 기능이라 레디스를 이용한 분산락을 사용
+                \item ngrinder 이용한 성능 테스트를 통해 적정 TPS 확인
+            \end{highlights}
+            \item \textbf{기술} : 레디스, ngrinder
+        \end{highlights}
+    \end{twocolentry}
+
+    \vspace{0.2 cm}
+
+
+    \section{Trouble Shooting}
+
+
+
+
+    \begin{highlights}
+
+        % TODO : uri에 한글있으면 링크 실패
+        \item \href{https://guswns1659.github.io/posts/}{HibernateCursorItemReader로 대용량 데이터 처리 시 OOME 발생 이유와 해결방법}
+        \item \href{https://guswns1659.github.io/posts/}{스프링부트 부팅 시 성능 저하와 Warm-up}
+        \item \href{https://guswns1659.github.io/posts/}{Spring WebClient 사용 시 uri tag가 none으로 찍히는 이슈}
+
+    \end{highlights}
+
+    \vspace{0.2 cm}
+
+
+    \section{Side Projects}
+
+
+    \begin{highlights}
+
+        \item 이벤트 스토밍을 통한 PM, 개발자 컨텍스트 공유, 2주 단위 스프린트 도입하여 점진적 발전 기여
+        \item 코드리뷰 지연 방지를 위한 PR 알림 봇
+            \begin{highlights}
+                \item MSA로 프로젝트가 많아지면서 혼자 프로젝트를 진행하는 경우 리뷰가 늦어지는 경우 발생
+                \item 매일 아침 approved 받지 못해 리뷰가 필요한 pr 모아서 알림
+                \item 결과 : 평균 00건 -> 00건
+            \end{highlights}
+        \item 배포 브랜치 자동 관리 시스템
+            \begin{highlights}
+                \item 여러 기능이 동시에 진행될 때 베타 테스트의 형상이 달라지는 경우가 발생
+                \item 배포 브랜치를 사람이 관리하지 않고 github hook 이벤트 이용해 자동 관리하도록 변경
+            \end{highlights}
+
+    \end{highlights}
+
+
+\end{document}
