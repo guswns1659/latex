@@ -368,21 +368,22 @@
 
     \section{Side Projects}
 
-    회사에서 팀원들이 불편함을 겪는 사항을 자발적으로 개선하기 위한 프로젝트 입니다.
-
     \begin{highlights}
 
-        \item 코드리뷰 지연 방지를 위한 PR 알림 봇
-        \begin{highlights}
-            \item MSA로 프로젝트가 많아지면서 리뷰가 늦어지는 경우 발생
-            \item 매일 아침 approved 받지 못해 리뷰가 필요한 pr 모아서 슬랙 알림
-            \item 결과 : 평균 20건 -> 7건
-        \end{highlights}
-        \item 배포 브랜치 자동 관리 시스템
-        \begin{highlights}
-            \item 여러 기능이 동시에 진행될 때 베타 테스트의 형상이 달라지는 경우가 발생
-            \item 배포 브랜치를 사람이 관리하지 않고 github hook 이벤트 이용해 자동 관리하도록 변경
-        \end{highlights}
+        \item \textbf{코드리뷰 지연 방지를 위한 PR 알림 봇} : {\footnotesize MSA로 프로젝트가 많아지면서 코드 리뷰의 불편함을 해소하기 위한 프로젝트}
+            \begin{highlights}
+                {\footnotesize
+                    \item \textbf{역할} : \href{https://docs.github.com/en/rest/pulls/pulls?apiVersion=2022-11-28}{Gihub Pull Request API} 연동하여 리뷰가 필요한 pr 조회하고 슬랙으로 매일 아침 알림
+                    \item \textbf{개선} : 일 평균 20건 -> 7건 감소
+                }
+            \end{highlights}
+        \item \textbf{배포 브랜치 자동 관리 시스템} : {\footnotesize 휴먼에러를 방지하기 위해 배포 브랜치를 자동으로 생성해주는 프로젝트}
+            \begin{highlights}
+                {\footnotesize
+                    \item \textbf{역할} : \href{https://docs.github.com/ko/webhooks/webhook-events-and-payloads#pull_request_review_comment}{Github hook} 연동하여 main P.R이 approved 받으면 자동으로 staging P.R을 자동으로 생성
+                    \item \textbf{개선} : 수동으로 P.R 만들어야하는 불편함 해소, 안전한 main 브랜치 관리에 기여
+                }
+            \end{highlights}
 
     \end{highlights}
 
