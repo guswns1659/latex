@@ -146,9 +146,10 @@
     \def\thirdColumn{#3}
     \setcolumnwidth{1 cm, \fill, 4.5 cm}
     \begin{paracol}{3}
-    {\raggedright #2} \switchcolumn
-    }{
-    \switchcolumn \raggedleft \thirdColumn
+    {\raggedright #2}
+        \switchcolumn
+        }{
+        \switchcolumn \raggedleft \thirdColumn
     \end{paracol}
     \endonecolentry
 } % new environment for three column entries
@@ -201,6 +202,7 @@
         \end{highlightsforbulletentries}
     \end{onecolentry}
 
+
     \section{Experience}
 
 
@@ -241,13 +243,17 @@
 
         6개월
     }
-        \textbf{실시간 택스 리펀 프로젝트} : {\footnotesize 카카오페이 통해서 즉시 부가세를 환급받는 프로젝트}
+        \textbf{실시간 택스 리펀 프로젝트}
         \begin{highlights}
+        {\footnotesize
+            \item \textbf{설명} : 카카오페이 통해서 즉시 부가세를 환급받는 프로젝트
+            \item \textbf{역할} :
             \begin{highlights}
                 \item UTC+1 차이를 고려한 안정적인 대사 및 개발 진행
                 \item 중복 호출 시에도 정상적인 동작을 위한 멱등적 API 설계
                 \item 해외 알리페이 개발 담당자와 API 및 네트워크 통신을 위한 커뮤니케이션 담당
             \end{highlights}
+        }
         \end{highlights}
     \end{twocolentry}
 
@@ -258,9 +264,11 @@
 
         5개월
     }
-        \textbf{쓸수록 모이는 소비적금 프로젝트} : {\footnotesize 결제한 금액의 일부를 적금으로 모아주는 프로젝트}
+        \textbf{결제 반응형 적금 프로젝트}
         \begin{highlights}
+        {\footnotesize
 
+            \item \textbf{설명} : 결제한 금액의 일부를 적금으로 모아주는 프로젝트
             \item \textbf{성과} : 적금 계좌 20,000건 이상 개설
             \item \textbf{역할} :
             \begin{highlights}
@@ -268,6 +276,7 @@
                 \item 은행 지연 대비 서킷브레이커 적용
                 \item PM, 개발자의 동일한 컨텍스트 공유를 위한 스프린트 및 이벤트 스토밍 문화 도입
             \end{highlights}
+        }
         \end{highlights}
     \end{twocolentry}
 
@@ -278,16 +287,18 @@
 
         3개월
     }
-        \textbf{마이데이터 계좌 다건을 페이에 한번에 연결하는 프로젝트}
+        \textbf{마이데이터 계좌 연결 프로젝트}
         \begin{highlights}
+        {\footnotesize
 
-            \item \textbf{설명} : 기존 1건 계좌 연결을 개선해 평균 5건 이상 은행 계좌 한번에 연결하는 프로젝트
+            \item \textbf{설명} : 기존 1건씩 가능했던 계좌 연결 기능을 개선하는 프로젝트
             \item \textbf{성과} : 직전 월 대비 평균 계좌 연결 건수 85\% 증가 (54만건 -> 100만건)
             \item \textbf{역할} :
             \begin{highlights}
                 \item webflux 병렬성 이용하여 일반 동기호출 대비 레이턴시 3초 -> 0.5초로 개선. (평균 10건 기준)
                 \item 계좌 연결할 때 타임아웃 재시도를 위해 카프카 retry topic 및 dlt 활용
             \end{highlights}
+        }
         \end{highlights}
     \end{twocolentry}
 
@@ -301,6 +312,7 @@
         \textbf{마이데이터 계좌 송금 프로젝트}
         \begin{highlights}
 
+        {\footnotesize
             \item \textbf{설명} : 연결된 마이데이터 계좌에서 타 계좌로 송금할 수 있는 기능 제공하는 프로젝트
             \item \textbf{성과} : 분기 대비 송금 일 건수 28\% 증가 (180만 건 -> 230만건)
             \item \textbf{역할} :
@@ -309,6 +321,7 @@
                 \item 타임아웃 등으로 데이터 정합성 불일치 건들 재처리 프로세스 개발
                 \item 코드리뷰 비용을 줄이고 개발 팀원 모두가 동일한 컨텍스트를 공유하기 위해 페어프로그래밍 진행
             \end{highlights}
+        }
         \end{highlights}
     \end{twocolentry}
 
@@ -321,6 +334,7 @@
     }
         \textbf{주식 미수금액용 충전 프로젝트}
         \begin{highlights}
+        {\footnotesize
 
             \item \textbf{설명} : 평균 초당 13건 발생하는 미수금을 위한 충전 기능 제공하는 프로젝트
             \item \textbf{성과} : 잔액 정합성 유지하며 45,000건/시간, 13TPS 트래픽 처리, 약 13억/일 충전금액 증대 (peak 기준)
@@ -329,6 +343,7 @@
                 \item 잔액 정합성을 위해 레디스를 이용한 분산락을 사용하여 동시성 관리 % TODO : 내용 반복되어서 추가하기
                 \item ngrinder 이용한 성능 테스트를 통해 적정 TPS 확인
             \end{highlights}
+        }
         \end{highlights}
     \end{twocolentry}
 
@@ -371,7 +386,6 @@
         \end{highlights}
 
     \end{highlights}
-
 
 
     \section{Education}
@@ -439,7 +453,6 @@
 
         \end{highlights}
     \end{twocolentry}
-
 
 
     \section{Technologies}
