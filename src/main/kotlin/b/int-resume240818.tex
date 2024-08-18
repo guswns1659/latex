@@ -251,7 +251,7 @@
             \begin{highlights}
                 \item UTC+1 차이를 고려한 안정적인 대사 및 개발 진행
                 \item 중복 호출 시에도 정상적인 동작을 위한 멱등적 API 설계
-                \item 해외 알리페이 개발 담당자와 API 및 네트워크 통신을 위한 커뮤니케이션 담당
+                \item 해외 금융사 개발 담당자와 API 및 네트워크 통신을 위한 커뮤니케이션 담당
             \end{highlights}
         }
         \end{highlights}
@@ -269,7 +269,7 @@
         {\footnotesize
 
             \item \textbf{설명} : 결제한 금액의 일부를 적금으로 모아주는 프로젝트
-            \item \textbf{성과} : 적금 계좌 20,000건 이상 개설
+            \item \textbf{성과} : 적금 계좌 \textbf{20,000건} 이상 개설
             \item \textbf{역할} :
             \begin{highlights}
                 \item 적금 계좌로 송금 기능 개발과 잔액 정합성을 위한 재처리 프로세스 및 대사 개발
@@ -292,10 +292,10 @@
         {\footnotesize
 
             \item \textbf{설명} : 기존 1건씩 가능했던 계좌 연결 기능을 개선하는 프로젝트
-            \item \textbf{성과} : 직전 월 대비 평균 계좌 연결 건수 85\% 증가 (54만건 -> 100만건)
+            \item \textbf{성과} : 직전 월 대비 평균 계좌 연결 건수 \textbf{85\% 증가} (54만건 -> 100만건)
             \item \textbf{역할} :
             \begin{highlights}
-                \item webflux 병렬성 이용하여 일반 동기호출 대비 레이턴시 3초 -> 0.5초로 개선. (평균 10건 기준)
+                \item webflux 병렬성 이용하여 일반 동기호출 대비 레이턴시 3초 -> 0.5초로 개선
                 \item 계좌 연결할 때 타임아웃 재시도를 위해 카프카 retry topic 및 dlt 활용
             \end{highlights}
         }
@@ -314,12 +314,12 @@
 
         {\footnotesize
             \item \textbf{설명} : 연결된 마이데이터 계좌에서 타 계좌로 송금할 수 있는 기능 제공하는 프로젝트
-            \item \textbf{성과} : 분기 대비 송금 일 건수 28\% 증가 (180만 건 -> 230만건)
+            \item \textbf{성과} : 분기 대비 송금 일 건수 \textbf{28\% 증가} (180만 건 -> 230만건)
             \item \textbf{역할} :
             \begin{highlights}
                 \item 잔액 정합성을 위해 레디스를 이용한 분산락을 사용하여 동시성 관리
                 \item 타임아웃 등으로 데이터 정합성 불일치 건들 재처리 프로세스 개발
-                \item 코드리뷰 비용을 줄이고 개발 팀원 모두가 동일한 컨텍스트를 공유하기 위해 페어프로그래밍 진행
+                \item 코드리뷰 비용 감소와 동일한 컨텍스트 공유를 위한 페어프로그래밍 진행
             \end{highlights}
         }
         \end{highlights}
@@ -337,7 +337,7 @@
         {\footnotesize
 
             \item \textbf{설명} : 평균 초당 13건 발생하는 미수금을 위한 충전 기능 제공하는 프로젝트
-            \item \textbf{성과} : 잔액 정합성 유지하며 45,000건/시간, 13TPS 트래픽 처리, 약 13억/일 충전금액 증대 (peak 기준)
+            \item \textbf{성과} : 잔액 정합성 유지하며 \textbf{45,000건/시간, 13TPS 트래픽 처리, 약 13억/일 충전금액} 증대
             \item \textbf{역할} :
             \begin{highlights}
                 \item 잔액 정합성을 위해 레디스를 이용한 분산락을 사용하여 동시성 관리 % TODO : 내용 반복되어서 추가하기
