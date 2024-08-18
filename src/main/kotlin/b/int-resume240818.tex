@@ -41,6 +41,9 @@
 \setmainfont{Nanum Myeongjo} % 나눔고딕 폰트 사용
 \setsansfont{Nanum Myeongjo}
 
+% 기본 텍스트 크기를 위해
+\renewcommand{\normalsize}{\small}
+
 % Ensure that generate pdf is machine readable/ATS parsable:
 \ifPDFTeX
 \input{glyphtounicode}
@@ -206,15 +209,12 @@
 
         3년
     }
-        \textbf{카카오페이}, {\small Backend Software Engineer}
+        \textbf{카카오페이}, {\footnotesize Backend Software Engineer}
         \begin{highlights}
 
-            \item \textbf{\small 테크핀 도메인 역량} : {\small 충전, 송금, 신한은행 등 외부사와 금융 제휴 상품 개발}
-            \item \textbf{\small 무결성 시스템 개발 역량} :
-            \begin{highlights}
-                \item {\small 금액 무결성을 위한 대사 작업, 재처리 프로세스, 동시성 관리, 멱등적 API 설계}
-            \end{highlights}
-            \item \textbf{\small 협업 역량} : {\small 페어프로그래밍, 스프린트, 이벤트 스토밍}
+            \item \textbf{\footnotesize 테크핀 도메인 역량} : {\scriptsize 충전, 송금, 신한은행 등 외부사와 금융 제휴 상품 개발}
+            \item \textbf{\footnotesize 무결성 시스템 개발 역량} : {\scriptsize 금액 무결성을 위한 대사 작업, 재처리 프로세스, 동시성 관리, 멱등적 API 설계}
+            \item \textbf{\footnotesize 협업 역량} : {\scriptsize 페어프로그래밍, 스프린트, 이벤트 스토밍}
         \end{highlights}
     \end{twocolentry}
 
@@ -225,10 +225,10 @@
 
         9개월
     }
-        \textbf{뱅크샐러드}, {\small Backend Software Engineer}
+        \textbf{뱅크샐러드}, {\footnotesize Backend Software Engineer}
         \begin{highlights}
 
-            \item {\small 금융사와 PLCC 카드 개발, Open API 통신 개발}
+            \item {\footnotesize 금융사와 PLCC 카드 개발, Open API 통신 개발}
         \end{highlights}
     \end{twocolentry}
 
@@ -241,11 +241,8 @@
 
         6개월
     }
-        \textbf{실시간 택스 리펀 프로젝트}
+        \textbf{실시간 택스 리펀 프로젝트} : {\footnotesize 카카오페이 통해서 즉시 부가세를 환급받는 프로젝트}
         \begin{highlights}
-
-            \item \textbf{설명} : 카카오페이 통해서 즉시 부가세를 환급받는 프로젝트
-            \item \textbf{역할} :
             \begin{highlights}
                 \item UTC+1 차이를 고려한 안정적인 대사 및 개발 진행
                 \item 중복 호출 시에도 정상적인 동작을 위한 멱등적 API 설계
@@ -261,10 +258,9 @@
 
         5개월
     }
-        \textbf{쓸수록 모이는 소비적금 프로젝트}
+        \textbf{쓸수록 모이는 소비적금 프로젝트} : {\footnotesize 결제한 금액의 일부를 적금으로 모아주는 프로젝트}
         \begin{highlights}
 
-            \item \textbf{설명} : 결제한 금액의 일부를 적금으로 모아주는 프로젝트
             \item \textbf{성과} : 적금 계좌 20,000건 이상 개설
             \item \textbf{역할} :
             \begin{highlights}
