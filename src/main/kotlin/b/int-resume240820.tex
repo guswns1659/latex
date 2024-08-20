@@ -166,6 +166,8 @@
 % new command for external links:
 \renewcommand{\href}[2]{\hrefWithoutArrow{#1}{\mbox{\ifthenelse{\equal{#2}{}}{ }{#2 }\raisebox{.15ex}{\footnotesize \faExternalLink*}}}}
 
+% TODO 추가해볼만한 거 : 알리랑 했던 rsa 암호화, 계좌번호 등 개인정보 aes 암호화, sFTP 파일 서버 접속 및 관리
+
 
 \begin{document}
     \placelastupdatedtext
@@ -195,9 +197,9 @@
         \begin{highlightsforbulletentries}
 
 
-            \item 2주 단위 스프린트 플래닝과 회고를 통해 점진적 발전을 추구하고 페어 프로그래밍 도입하여 코드 품질 향상을 위해 노력합니다
+            \item 2주 단위 스프린트 플래닝과 회고를 통해 점진적 발전을 추구하고 페어 프로그래밍 도입하여 코드 품질 향상을 위해 노력합니다.
 
-            \item 적극적으로 문제를 해결하기 위해 노력합니다. 주어진 업무가 아니라도 자발적으로 팀 내에서 불편한 사항들이나 도움될만한 건들은 개별 프로젝트로 진행했습니다
+            \item 적극적으로 문제를 해결하기 위해 노력합니다. 팀에서 불편해하는 사항을 개선하거나 생산성 향상을 위해서 자발적으로 사이드 프로젝트를 진행한 경험이 있습니다.
 
         \end{highlightsforbulletentries}
     \end{onecolentry}
@@ -209,13 +211,13 @@
     \begin{twocolentry}{
         2021.07 - 현재
 
-        3년
+        3년 1개월
     }
         \textbf{카카오페이}, {\footnotesize Backend Software Engineer}
         \begin{highlights}
 
             \item \textbf{\footnotesize 테크핀 도메인 개발 역량} : {\scriptsize 충전, 송금, 신한은행 등 외부사와 금융 제휴 상품 개발}
-            \item \textbf{\footnotesize 무결성 시스템 개발 역량} : {\scriptsize 금액 무결성을 위한 데이터 검증 역량, 재처리 프로세스, 동시성 관리, 멱등적 API 설계}
+            \item \textbf{\footnotesize 무결성 시스템 개발 역량} : {\scriptsize 금액 무결성을 위한 데이터 검증 역량, 재처리 프로세스, 동시성 관리}
             \item \textbf{\footnotesize 협업 역량} : {\scriptsize 페어프로그래밍, 스프린트, 이벤트 스토밍}
         \end{highlights}
     \end{twocolentry}
@@ -249,9 +251,9 @@
             \item \textbf{설명} : 카카오페이 통해서 즉시 부가세를 환급받는 프로젝트
             \item \textbf{역할} :
             \begin{highlights}
-                \item UTC+1 차이를 고려한 정확한 데이터 검증 작업 및 개발 진행
+                \item UTC 차이를 고려하며 정확한 정산을 위한 데이터 검증 작업 및 개발 진행
                 \item 중복 호출 시에도 정상적인 동작을 위한 멱등적 API 설계
-                \item 해외 금융사 개발 담당자와 API 및 네트워크 통신을 위한 커뮤니케이션 담당
+                \item 해외 금융사 개발 담당자와 API 개발 및 네트워크 통신을 위한 커뮤니케이션 담당
             \end{highlights}
         }
         \end{highlights}
@@ -269,12 +271,11 @@
         {\footnotesize
 
             \item \textbf{설명} : 결제한 금액의 일부를 적금으로 모아주는 프로젝트
-            \item \textbf{성과} : 적금 계좌 \textbf{20,000건} 이상 개설
+            \item \textbf{성과} : 적금 계좌 \textbf{30,000건} 이상 개설
             \item \textbf{역할} :
             \begin{highlights}
-                \item 적금 계좌로 송금 기능 개발과 잔액 정합성을 위한 재처리 프로세스 및 데이터 검증 프로세스 개발
-                \item 은행 지연 대비 서킷브레이커 적용
-                \item PM, 개발자의 동일한 컨텍스트 공유를 위한 스프린트 및 이벤트 스토밍 문화 도입
+                \item 적금 계좌로 송금하는 기능 개발 및 은행 지연 대비 서킷브레이커 적용
+                \item PM과 개발자의 동일한 컨텍스트 공유를 위한 이벤트 스토밍 및 스프린트 문화 도입
             \end{highlights}
         }
         \end{highlights}
@@ -295,8 +296,8 @@
             \item \textbf{성과} : 직전 월 대비 평균 계좌 연결 건수 \textbf{85\% 증가} (54만건 -> 100만건)
             \item \textbf{역할} :
             \begin{highlights}
-                \item webflux 병렬성 이용하여 일반 동기호출 대비 레이턴시 3초 -> 0.5초로 개선
-                \item 계좌 연결할 때 타임아웃 재시도를 위해 카프카 retry topic 및 dlt 활용
+                \item webflux 병렬성을 이용하여 일반 동기 호출 대비 레이턴시 3초 -> 0.5초로 개선
+                \item 계좌 연결할 때 타임아웃 재시도를 위해 카프카 retry topic 활용
             \end{highlights}
         }
         \end{highlights}
@@ -325,7 +326,7 @@
         \end{highlights}
     \end{twocolentry}
 
-    \vspace{0.2 cm}
+    \vspace{1.2 cm}
 
     \begin{twocolentry}{
         2022.03 - 2022.06
@@ -336,11 +337,11 @@
         \begin{highlights}
         {\footnotesize
 
-            \item \textbf{설명} : 평균 초당 13건 발생하는 미수금을 위한 충전 기능 제공하는 프로젝트
-            \item \textbf{성과} : 잔액 정합성 유지하며 \textbf{45,000건/시간, 13TPS 트래픽 처리, 약 13억/일 충전금액} 증대
+            \item \textbf{설명} : 잔고 부족으로 발생하는 주식 미수금을 위한 충전 기능 프로젝트
+            \item \textbf{성과} : 45,000건/시간, \textbf{13TPS 트래픽 처리, 약 13억/일 충전금액} 증대
             \item \textbf{역할} :
             \begin{highlights}
-                \item 잔액 정합성을 위해 레디스를 이용한 분산락을 사용하여 동시성 관리 % TODO : 내용 반복되어서 추가하기
+                \item 중복 호출을 방지하기 위한 동시성 관리
                 \item ngrinder 이용한 성능 테스트를 통해 적정 TPS 확인
             \end{highlights}
         }
@@ -440,6 +441,18 @@
 
 
     \section{Specical Experience \&& Certificate}
+
+    \begin{twocolentry}{
+        2024
+    }
+        \begin{highlights}
+
+            \item \textbf{카카오페이 기술블로그 게시}, \footnotesize{\href{https://tech.kakaopay.com/post/jack-k8s-internals-part-1/}{쓰기만 했던 개발자가 궁금해서 찾아본 쿠버네티스 내부}}
+
+        \end{highlights}
+    \end{twocolentry}
+
+    \vspace{0.2 cm}
 
 
     \begin{twocolentry}{
