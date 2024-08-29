@@ -19,15 +19,15 @@
 \usepackage{fontawesome5} % for using icons
 \usepackage{amsmath} % for math
 \usepackage[
-    pdftitle={John Doe's CV},
-    pdfauthor={John Doe},
+    pdftitle={HyunJun Son's CV},
+    pdfauthor={HyunJun Son},
     colorlinks=true,
     urlcolor=primaryColor
 ]{hyperref} % for links, metadata and bookmarks
 \usepackage[pscoord]{eso-pic} % for floating text on the page
 \usepackage{calc} % for calculating lengths
 \usepackage{bookmark} % for bookmarks
-\usepackage{lastpage} % for getting the total number of pages
+%\usepackage{lastpage} % for getting the total number of pages
 \usepackage{changepage} % for one column entries (adjustwidth environment)
 \usepackage{paracol} % for two and three column entries
 \usepackage{ifthen} % for conditional statements
@@ -64,9 +64,9 @@
 \setlength{\columnsep}{0.15cm} % set column seperation
 \makeatletter
 \let\ps@customFooterStyle\ps@plain % Copy the plain style to customFooterStyle
-\patchcmd{\ps@customFooterStyle}{\thepage}{
-    \color{gray}\textit{\small 손현준 - Page \thepage{} of \pageref*{LastPage}}
-}{}{} % replace number by desired string
+%\patchcmd{\ps@customFooterStyle}{\thepage}{
+%    \color{gray}\textit{\small 손현준 - Page \thepage{} of \pageref*{LastPage}}
+%}{}{} % replace number by desired string
 \makeatother
 \pagestyle{customFooterStyle}
 
@@ -170,7 +170,7 @@
 
 
 \begin{document}
-    \placelastupdatedtext
+%    \placelastupdatedtext
     \begin{header}
         \fontsize{15 pt}{15 pt}
         \textbf{손현준}
@@ -375,14 +375,14 @@
         \item \textbf{코드리뷰 지연 방지를 위한 PR 알림 봇} : {\footnotesize MSA로 프로젝트가 많아지면서 코드 리뷰의 불편함을 해소하기 위한 프로젝트}
             \begin{highlights}
                 {\footnotesize
-                    \item \textbf{역할} : \href{https://docs.github.com/en/rest/pulls/pulls?apiVersion=2022-11-28}{Gihub Pull Request API} 연동하여 리뷰가 필요한 pr 조회하고 슬랙으로 매일 아침 알림
+                    \item \textbf{역할} : \href{https://docs.github.com/en/rest/pulls/pulls?apiVersion=2022-11-28\#list-pull-requests}{Gihub Pull Request API} 연동하여 리뷰가 필요한 pr 조회하고 슬랙으로 매일 아침 알림
                     \item \textbf{개선} : 일 평균 20건 -> 7건 감소
                 }
             \end{highlights}
         \item \textbf{배포 브랜치 자동 관리 시스템} : {\footnotesize 휴먼에러를 방지하기 위해 배포 브랜치를 자동으로 생성해주는 프로젝트}
             \begin{highlights}
                 {\footnotesize
-                    \item \textbf{역할} : \href{https://docs.github.com/ko/webhooks/webhook-events-and-payloads#pull_request_review_comment}{Github hook} 연동하여 main P.R이 approved 받으면 자동으로 staging P.R을 자동으로 생성
+                    \item \textbf{역할} : \href{https://docs.github.com/ko/webhooks/webhook-events-and-payloads\#pull_request_review_comment}{Github hook} 연동하여 main P.R이 approved 받으면 자동으로 staging P.R을 자동으로 생성
                     \item \textbf{개선} : 수동으로 P.R 만들어야하는 불편함 해소, 안전한 main 브랜치 관리에 기여
                 }
             \end{highlights}
@@ -441,7 +441,7 @@
     \end{twocolentry}
 
 
-    \section{Specical Experience \&& Certificate}
+    \section{Specical Experience \& Certificate}
 
     \begin{twocolentry}{
         2024
@@ -502,7 +502,7 @@
     \vspace{0.2 cm}
 
     \begin{highlights}
-        \item \textbf{Framework \&& Library:} Spring Boot, Spring Batch, JPA, Gradle, resilience4j
+        \item \textbf{Framework \& Library:} Spring Boot, Spring Batch, JPA, Gradle, resilience4j
     \end{highlights}
 
     \vspace{0.2 cm}
