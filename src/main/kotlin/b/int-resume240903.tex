@@ -217,7 +217,7 @@
         \begin{highlights}
 
             \item \textbf{\footnotesize 테크핀 도메인 개발 역량} : {\scriptsize 충전, 송금, 신한은행 등 외부사와 금융 제휴 상품 개발}
-            \item \textbf{\footnotesize 무결성 시스템 개발 역량} : {\scriptsize 금액 무결성을 위한 데이터 검증 역량, 재처리 프로세스, 동시성 관리}
+            \item \textbf{\footnotesize 무결성 시스템 개발 역량} : {\scriptsize 금액 무결성을 위한 데이터 검증 역량, 동시성 관리}
             \item \textbf{\footnotesize 협업 역량} : {\scriptsize 페어프로그래밍, 스프린트, 이벤트 스토밍}
         \end{highlights}
     \end{twocolentry}
@@ -320,37 +320,14 @@
             \item \textbf{역할} :
             \begin{highlights}
                 \item 잔액 정합성을 위해 레디스를 이용한 분산락을 사용하여 동시성 관리
-                \item 타임아웃 등으로 데이터 정합성 불일치 건들 재처리 프로세스 개발
+                \item 타임아웃 등으로 데이터 정합성 불일치 건들 보정 프로세스 개발
                 \item 코드리뷰 비용 감소와 동일한 컨텍스트 공유를 위한 페어프로그래밍 진행
             \end{highlights}
         }
         \end{highlights}
     \end{twocolentry}
 
-    \vspace{1.2 cm}
-
-    \begin{twocolentry}{
-        2022.03 - 2022.06
-
-        4개월
-    }
-        \textbf{주식 미수금액용 충전 프로젝트}
-        \begin{highlights}
-        {\footnotesize
-
-            \item \textbf{설명} : 잔고 부족으로 발생하는 주식 미수금을 위한 충전 기능 프로젝트
-            \item \textbf{성과} : 45,000건/시간, \textbf{13TPS 트래픽 처리, 약 13억/일 충전금액} 증대
-            \item \textbf{역할} :
-            \begin{highlights}
-                \item 중복 호출을 방지하기 위한 동시성 관리
-                \item ngrinder 이용한 성능 테스트를 통해 적정 TPS 확인
-            \end{highlights}
-        }
-        \end{highlights}
-    \end{twocolentry}
-
     \vspace{0.2 cm}
-
 
     \section{Trouble Shooting}
 
@@ -366,7 +343,6 @@
     \end{highlights}
 
     \vspace{0.2 cm}
-
 
     \section{Work-related Side Projects}
 
@@ -448,7 +424,13 @@
     }
         \begin{highlights}
 
-            \item \textbf{카카오페이 기술블로그 발행}, \footnotesize{\href{https://tech.kakaopay.com/post/jack-k8s-internals-part-1/}{쓰기만 했던 개발자가 궁금해서 찾아본 쿠버네티스 내부}}
+            \item \textbf{카카오페이 기술블로그 2건 발행},
+            \begin{highlights}
+                \footnotesize{
+                    \item \href{https://tech.kakaopay.com/post/jack-k8s-internals-part-1/}{쓰기만 했던 개발자가 궁금해서 찾아본 쿠버네티스 내부 1편}
+                    \item \href{https://tech.kakaopay.com/post/jack-k8s-internals-part-2/}{쓰기만 했던 개발자가 궁금해서 찾아본 쿠버네티스 내부 2편}
+                }
+            \end{highlights}
 
         \end{highlights}
     \end{twocolentry}
