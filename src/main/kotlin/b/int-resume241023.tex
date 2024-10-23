@@ -268,11 +268,11 @@
         {\footnotesize
 
             \item \textbf{설명} : 결제한 금액의 일부를 적금으로 모아주는 프로젝트
-            \item \textbf{성과} : 적금 계좌 \textbf{30,000건} 이상 개설
+            \item \textbf{성과} : 적금 계좌 \textbf{35,000건} 이상 개설
             \item \textbf{역할} :
             \begin{highlights}
                 \item 분산 트랜잭션으로 나눠진 송금 기능을 안정적으로 개발하여 \textbf{송금 300만건} 정상 처리
-                \item 은행 지연 대비 서킷브레이커 적용
+                \item 은행 지연 및 장애 대비 서킷브레이커 적용
                 \item PM과 개발자의 동일한 컨텍스트 공유를 위한 이벤트 스토밍 및 스프린트 문화 도입
             \end{highlights}
         }
@@ -294,8 +294,8 @@
             \item \textbf{성과} : 직전 월 대비 평균 계좌 연결 건수 \textbf{85\% 증가} (54만건 -> 100만건)
             \item \textbf{역할} :
             \begin{highlights}
-                \item 비동기 동시 호출을 적용하여 일반 동기 호출 대비 레이턴시 3초 -> 0.5초로 개선
-                \item 폴링 및 카프카 이벤트 발행 방식으로 높은 처리량과 빠른 응답 보장
+                \item 논블록킹 리액티브 프로그래밍으로 일반 동기 호출 대비 레이턴시 3초 -> 0.5초로 개선
+                \item 카프카를 이용한 비동기 프로그래밍으로 높은 처리량과 빠른 응답 보장
             \end{highlights}
         }
         \end{highlights}
@@ -343,8 +343,8 @@
 
     \section{Work-related Side Projects}
 
-    \begin{highlights}
-
+    \vspace{2mm}
+    \begin{itemize}
         \item \textbf{코드리뷰 지연 방지를 위한 PR 알림 봇} : {\footnotesize MSA로 프로젝트가 많아지면서 코드 리뷰의 불편함을 해소하기 위한 프로젝트}
             \begin{highlights}
                 {\footnotesize
@@ -360,7 +360,7 @@
                 }
             \end{highlights}
 
-    \end{highlights}
+    \end{itemize}
 
 
     \section{Education}
