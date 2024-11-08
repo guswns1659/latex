@@ -34,12 +34,31 @@
 \usepackage{needspace} % for avoiding page brake right after the section title
 \usepackage{iftex} % check if engine is pdflatex, xetex or luatex
 
-% 한국어 폰트를 위해
-%\usepackage{kotex}
 \usepackage{fontspec}
-\setmainfont{NanumGothic} % 나눔고딕 폰트 사용
-\setsansfont{NanumGothic}
 \usepackage{luatexko}
+% 새폰트 적용하려면 다운받고 /Library/Fonts 내에 폰트 파일이 존재해야함
+% font 캐시 날리고 reload 명령어 실행 필요
+% 1. luaotfload-tool --update --force
+% 2. fc-cache -fv
+
+% path 지정하는법 1
+%\setmainfont[
+%    UprightFont = *-Regular,      % 일반체
+%    BoldFont = *-Bold,            % 굵은체
+%%    ItalicFont = *-Italic,        % 기울임체
+%%    BoldItalicFont = *-BoldItalic % 굵은 기울임체
+%]{MaruBuri}
+
+% path 지정하는 법2
+%\setmainfont[
+%    Path = {/Users/yourusername/Library/Fonts/},
+%    UprightFont = {NanumSquareRoundR.ttf},
+%    BoldFont = {NanumSquareRoundB.ttf},
+%    ItalicFont = {NanumMyeongjo-Italic.ttf},
+%    BoldItalicFont = {NanumMyeongjo-BoldItalic.ttf}
+%]{NanumSquareRoundR}
+\setmainfont{NanumGothic}
+%\setsansfont{NanumGothic}
 
 % 기본 텍스트 크기를 위해
 \renewcommand{\normalsize}{\small}
@@ -48,12 +67,8 @@
 \ifPDFTeX
 \input{glyphtounicode}
 \pdfgentounicode=1
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
 \usepackage{lmodern}
 \fi
-
-\usepackage[default, type1]{sourcesanspro}
 
 % Some settings:
 \AtBeginEnvironment{adjustwidth}{\partopsep0pt} % remove space before adjustwidth environment
